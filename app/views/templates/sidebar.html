@@ -1,0 +1,79 @@
+<!-- START Sidebar-->
+<div class="sidebar-wrapper">
+   <div ui-sidebar="" class="sidebar">
+      <div class="sidebar-nav">
+         <ul class="nav">
+            <!-- Iterates over all sidebar items-->
+            <li class="nav-heading">
+               <span class="text-muted">Navegaci&oacute;n</span>
+            </li>
+            <li ng-class="{active:$state.includes('dashboard')}">
+               <a ui-sref="app.dashboard" href="" title="Layouts" ripple="">
+                  <em class="sidebar-item-icon fa fa-home"></em>
+                  <span>Inicio</span>
+               </a>
+            </li>
+            <li>
+               <a href="" title="Patronos" ripple="">
+                  <em class="sidebar-item-icon fa fa-user"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span>Patronos</span>
+               </a>
+               <ul class="nav sidebar-subnav">
+                  <li ui-sref-active="active">
+                     <a title="Default" ripple="">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Certificaci&oacute;n de Deuda</span>
+                     </a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a title="Docked" ripple="">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Certificaci&oacute;n de Sistema de Experiencia</span>
+                     </a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a title="Full Height" ripple="">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Certificaci&oacute;n de Sistema de M&eacute;rito</span>
+                     </a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a title="Full Height" ripple="">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Certificaci&oacute;n de Vigencia</span>
+                     </a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a title="Full Height" ripple="">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Declaraci&oacute;n de N&oacute;mina</span>
+                     </a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a title="Full Height" ripple="">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Creaci&oacute;n de Caso Nuevo</span>
+                     </a>
+                  </li>
+               </ul>
+            </li>
+            <li>
+               <a href="" title="Proveedores" ripple="">
+                  <em class="sidebar-item-icon fa fa-medkit"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span>Proveedores</span>
+               </a>
+            </li>
+            <li>
+               <a href="" title="Lesionados" ripple="">
+                  <em class="sidebar-item-icon fa fa-bed"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span>Lesionados</span>
+               </a>
+            </li>
+         </ul>
+      </div>
+   </div>
+</div>
+<!-- END Sidebar-->

@@ -1,0 +1,48 @@
+<div class="app-view-header text-center">
+	Portal de Transacciones
+</div>
+<div ng-controller="DashboardController as dashboard" class="container-fluid">
+   
+   <div class="row text-center text-muted m0">
+    	<div class="col-xs-12 col-md-2 col-md-offset-3">
+            <div class="panel panel-default">
+                <div ripple ui-sref="app.login" ng-class="{'bg-primary': $root.employerSelected}" class="bb br pv-xxl">
+                    <em class="fa fa-user fa-2x mv"></em>
+                    <p>Patronos</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <div class="panel panel-default">
+                <div class="bb-lg br pv-xxl">
+                    <em class="fa fa-medkit fa-2x mv"></em>
+                    <p>Proveedores</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <div class="panel panel-default">
+                <div class="bb-lg br pv-xxl">
+                    <em class="fa fa-bed fa-2x mv"></em>
+                    <p>Lesionados</p>
+                </div>
+            </div>
+        </div>	
+    </div>
+
+    <br>
+
+    <div class="row" ng-hide="$root.employerSelected && $root.showUsername">
+    	<div class="col-md-6 col-md-offset-3">
+    		<button type="button" class="btn btn-default">Creaci&oacute;n de usuarios</button>
+    		<button type="button" class="btn btn-default pull-right" ui-sref="app.login">Iniciar sesi&oacute;n</button>
+    	</div>
+    </div>
+
+    <div class="row" style="margin-top: 15px;" ng-show="$root.employerSelected && $root.showUsername">
+    	<div class="col-md-6 col-md-offset-3">
+    		<abn-tree tree-data="transactions"></abn-tree>
+    	</div>
+    </div>
+
+</div>

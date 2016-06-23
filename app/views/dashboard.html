@@ -1,0 +1,211 @@
+<div class="app-view-header text-center" ng-hide="app.isLoggedIn">
+	Portal de Transacciones
+</div>
+<div ng-controller="DashboardController as dashboard" class="container-fluid">
+
+   <div class="row text-center text-muted m0">
+    	<div class="col-xs-12 col-md-2 col-md-offset-3">
+            <div class="panel panel-default">
+                <div ripple ng-click="employerSelected = true;" class="bb br" ng-class="{'bg-primary': employerSelected, 'pv-sm': app.isLoggedIn, 'pv-xxl': !app.isLoggedIn}" >
+                    <em class="fa fa-user fa-2x mv"></em>
+                    <p>Patronos</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <div class="panel panel-default">
+                <div class="bb-lg br" ng-class="{'pv-xxl': !app.isLoggedIn, 'pv-sm': app.isLoggedIn, 'bg-gray': app.isLoggedIn}">
+                    <em class="fa fa-medkit fa-2x mv"></em>
+                    <p>Proveedores</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <div class="panel panel-default">
+                <div class="bb-lg br" ng-class="{'pv-xxl': !app.isLoggedIn, 'pv-sm': app.isLoggedIn, 'bg-gray': app.isLoggedIn}">
+                    <em class="fa fa-bed fa-2x mv"></em>
+                    <p>Lesionados</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row" style="margin-top: 15px;" ng-show="employerSelected">
+    	<div class="col-md-6 col-md-offset-3" ng-hide="app.displayCreateNewCasePanels">
+    		<abn-tree tree-data="transactions" expand-level='0'></abn-tree>
+			<abn-tree tree-data="createNewCase"></abn-tree>
+    	</div>
+    </div>
+
+	<br>
+	<!-- <div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div ng-init="activeStep=1" class="wizard">
+						<ul class="steps-bar">
+							<li class="active"><span>Step 1</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="row" style="margin-top: 15px;" ng-show="app.displayCreateNewCasePanels">
+		<div class="col-md-10 col-md-offset-1">
+			<form class="" action="index.html" method="post">
+				<uib-accordion close-others="false">
+					<uib-accordion-group is-open="dashboard.accordion.patron" panel-class="bg-cfse-light">
+						<uib-accordion-heading>
+							<span style="color: white;">
+								Informaci&oacute;n del Patrono <i class="pull-right glyphicon"
+								ng-class="{'glyphicon-chevron-down': dashboard.accordion.patron, 'glyphicon-chevron-right': !status.dashboard.accordion.patron}"></i>
+							</span>
+						</uib-accordion-heading>
+						<div class="panel-body">
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="" class="control-label">Nombre del Patrono</label>
+										<input type="text" name="name" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label for="" class="control-label">Direcci&oacute;n Postal</label>
+										<input type="text" name="name" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="" class="control-label">Correo Electr&oacute;nico</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label for="" class="control-label">Nombre de la Compa&ntilde;&iacute;a</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="" class="control-label">Seguro Social Patronal</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label for="" class="control-label">N&uacute;mero de Poliza de Seguro</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="" class="control-label">Tipo de Empleador</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label for="" class="control-label">Direcci&oacute;n F&iacute;sica</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="" class="control-label">N&uacute;mero de Contacto</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label for="" class="control-label">Tipo de Negocio</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+								</div>
+							</div>
+						</div>
+					</uib-accordion-group>
+					<uib-accordion-group is-open="dashboard.accordion.employee" panel-class="bg-cfse-light">
+						<uib-accordion-heading>
+							<span style="color: white;">
+								Informaci&oacute;n del Empleado <i class="pull-right glyphicon"
+								ng-class="{'glyphicon-chevron-down': dashboard.accordion.employee, 'glyphicon-chevron-right': !status.dashboard.accordion.employee}"></i>
+							</span>
+						</uib-accordion-heading>
+						<div class="panel-body">
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="" class="control-label">Seguro Social</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label for="" class="control-label">Direcci&oacute; F&iacute;sica</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="" class="control-label">Primer Apellido</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label for="" class="control-label">Direcci&oacute;n Postal</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="" class="control-label">Segundo Apellido</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label for="" class="control-label">N&uacute;mero de Contacto</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="" class="control-label">Primer Nombre</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label for="" class="control-label">Fax</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="" class="control-label">Segundo Nombre</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label for="" class="control-label">Correo Electr&oacute;nico</label>
+										<input type="text" name="name" value="" class="form-control">
+									</div>
+								</div>
+							</div>
+						</div>
+					</uib-accordion-group>
+				</uib-accordion>
+				<div class="form-group" style="margin-top: 5px;">
+					<div class="row">
+						<div class="col-sm-12 text-right">
+							<input type="button" name="name" value="Enviar" ripple="" ng-click="app.displayCreateNewCasePanels = !app.displayCreateNewCasePanels" class="ml btn btn-oval btn-primary" style="background-color: #cd7c5e; border-color: #cd7c5e;">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

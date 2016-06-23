@@ -1,0 +1,249 @@
+<div class="app-view-header">
+	Seleccione transacci&oacute;n a consultar
+</div>
+
+<div ng-controller="PatronController as dashboard" class="container-fluid">
+   <div class="row">
+   		<div class="col-md-2">
+   			<uib-tabset active="false" vertical="true" type="pills">
+   				<uib-tab index="1" heading="Certificaci&oacute;n de deuda" classes="bg-cfse-light-tab" select="dashboard.setCurrentView(dashboard.views.years)"></uib-tab>
+   				<uib-tab index="2" heading="Creaci&oacute;n de nuevo caso" classes="bg-cfse-light-tab" select="dashboard.setCurrentView(dashboard.views.form)"></uib-tab>
+   				<uib-tab index="3" heading="Trans 3" classes="bg-cfse-light-tab"></uib-tab>
+   			</uib-tabset>
+   		</div>
+   		<div class="col-md-10" ng-show="dashboard.currentView === dashboard.views.years">
+   			<div class="row">
+   				<div class="col-md-6">
+   					<form role="form" class="mb-lg ng-pristine ng-valid">
+			            <div class="form-group">
+			                <label class="control-label"><i class="fa fa-search" style="margin-right: 5px;"></i>N&uacute;mero de p&oacute;liza</label>
+			                <input type="text" placeholder="N&uacute;mero de p&oacute;liza" class="form-control" ng-model="dashboard.policyNumber" />
+			            </div>
+			        </form>
+   				</div>
+   			</div>
+   			<div class="row">
+		   		<div class="col-md-1" ng-show="dashboard.policyNumber === '123456'">
+		        	<div class="panel panel-default">
+						<div ripple ng-click="dashboard.setYear(2006); dashboard.download();" ng-class="{'bg-primary': dashboard.year === 2006}" class="bb br pv-xxl clickable">
+			        		<p class="text-center" style="font-size: 24px;">2006</p>
+			        	</div>
+			        </div>
+			    </div>
+			    <div class="col-md-1" ng-show="dashboard.policyNumber === 'ZT123'">
+			    	<div class="panel panel-default">
+			    		<div ripple ng-click="dashboard.setYear(2007)" ng-class="{'bg-info': dashboard.year === 2007}" class="bb br pv-xxl clickable">
+			        		<p class="text-center" style="font-size: 24px;">2007</p>
+			        	</div>
+			        </div>
+			    </div>
+			    <div class="col-md-1" ng-show="dashboard.policyNumber === '123456'">
+			    	<div class="panel panel-default">
+			        	<div ripple ng-click="dashboard.setYear(2008)" ng-class="{'bg-success': dashboard.year === 2008}" class="bb br pv-xxl clickable">
+			        		<p class="text-center" style="font-size: 24px;">2008</p>
+			        	</div>
+			        </div>
+		        </div>
+		        <div class="col-md-1" ng-show="dashboard.policyNumber === 'ZT123'">
+			    	<div class="panel panel-default">
+			    		<div ripple ng-click="dashboard.setYear(2009)" ng-class="{'bg-info': dashboard.year === 2009}" class="bb br pv-xxl clickable">
+			        		<p class="text-center" style="font-size: 24px;">2009</p>
+			        	</div>
+			        </div>
+			    </div>
+			    <div class="col-md-1" ng-show="dashboard.policyNumber === '123456'">
+			    	<div class="panel panel-default">
+			        	<div ripple ng-click="dashboard.setYear(2010)" ng-class="{'bg-success': dashboard.year === 2010}" class="bb br pv-xxl clickable">
+			        		<p class="text-center" style="font-size: 24px;">2010</p>
+			        	</div>
+			        </div>
+		        </div>
+		        <div class="col-md-1" ng-show="dashboard.policyNumber === 'ZT123'">
+			    	<div class="panel panel-default">
+			    		<div ripple ng-click="dashboard.setYear(2011)" ng-class="{'bg-info': dashboard.year === 2011}" class="bb br pv-xxl clickable">
+			        		<p class="text-center" style="font-size: 24px;">2011</p>
+			        	</div>
+			        </div>
+			    </div>
+			    <div class="col-md-1" ng-show="dashboard.policyNumber === '123456'">
+			    	<div class="panel panel-default">
+			        	<div ripple ng-click="dashboard.setYear(2012)" ng-class="{'bg-success': dashboard.year === 2012}" class="bb br pv-xxl clickable">
+			        		<p class="text-center" style="font-size: 24px;">2012</p>
+			        	</div>
+			        </div>
+		        </div>
+		        <div class="col-md-1" ng-show="dashboard.policyNumber === 'ZT123'">
+			    	<div class="panel panel-default">
+			    		<div ripple ng-click="dashboard.setYear(2013)" ng-class="{'bg-info': dashboard.year === 2013}" class="bb br pv-xxl clickable">
+			        		<p class="text-center" style="font-size: 24px;">2013</p>
+			        	</div>
+			        </div>
+			    </div>
+			    <div class="col-md-1" ng-show="dashboard.policyNumber === '123456'">
+			    	<div class="panel panel-default">
+			        	<div ripple ng-click="dashboard.setYear(2014)" ng-class="{'bg-success': dashboard.year === 2014}" class="bb br pv-xxl clickable">
+			        		<p class="text-center" style="font-size: 24px;">2014</p>
+			        	</div>
+			        </div>
+		        </div>
+		   	</div>
+   		</div>
+   		<div class="col-md-10" ng-show="dashboard.currentView === dashboard.views.form">
+
+		<form class="" action="index.html" method="post">
+			<uib-accordion close-others="false">
+				<uib-accordion-group is-open="dashboard.accordion.patron" panel-class="bg-cfse-light">
+					<uib-accordion-heading>
+						<span style="color: white;">
+							Informaci&oacute;n del Patrono <i class="pull-right glyphicon"
+							ng-class="{'glyphicon-chevron-down': dashboard.accordion.patron, 'glyphicon-chevron-right': !status.dashboard.accordion.patron}"></i>
+						</span>
+					</uib-accordion-heading>
+					<div class="panel-body">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="" class="control-label">Nombre del Patrono</label>
+									<input type="text" name="name" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label for="" class="control-label">Direcci&oacute;n Postal</label>
+									<input type="text" name="name" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="" class="control-label">Correo Electr&oacute;nico</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label for="" class="control-label">Nombre de la Compa&ntilde;&iacute;a</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="" class="control-label">Seguro Social Patronal</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label for="" class="control-label">N&uacute;mero de Poliza de Seguro</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="" class="control-label">Tipo de Empleador</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label for="" class="control-label">Direcci&oacute;n F&iacute;sica</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="" class="control-label">N&uacute;mero de Contacto</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label for="" class="control-label">Tipo de Negocio</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+							</div>
+						</div>
+					</div>
+				</uib-accordion-group>
+				<uib-accordion-group is-open="dashboard.accordion.employee" panel-class="bg-cfse-light">
+					<uib-accordion-heading>
+						<span style="color: white;">
+							Informaci&oacute;n del Empleado <i class="pull-right glyphicon"
+							ng-class="{'glyphicon-chevron-down': dashboard.accordion.employee, 'glyphicon-chevron-right': !status.dashboard.accordion.employee}"></i>
+						</span>
+					</uib-accordion-heading>
+					<div class="panel-body">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="" class="control-label">Seguro Social</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label for="" class="control-label">Direcci&oacute; F&iacute;sica</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="" class="control-label">Primer Apellido</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label for="" class="control-label">Direcci&oacute;n Postal</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="" class="control-label">Segundo Apellido</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label for="" class="control-label">N&uacute;mero de Contacto</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="" class="control-label">Primer Nombre</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label for="" class="control-label">Fax</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="" class="control-label">Segundo Nombre</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label for="" class="control-label">Correo Electr&oacute;nico</label>
+									<input type="text" name="name" value="" class="form-control">
+								</div>
+							</div>
+						</div>
+					</div>
+				</uib-accordion-group>
+			</uib-accordion>
+			<div class="form-group" style="margin-top: 5px;">
+				<div class="row">
+					<div class="col-sm-12 text-right">
+						<input type="button" name="name" value="Enviar" ripple="" class="ml btn btn-oval btn-primary" style="background-color: #cd7c5e; border-color: #cd7c5e;">
+					</div>
+				</div>
+			</div>
+		</form>
+    </div>
+   	</div>
+
+
+
+</div>

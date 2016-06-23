@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+	<title>Naut - Bootstrap Admin Theme + Angularjs</title>
+ 	<meta name="description" content="">
+	<meta name="author" content="@geedmo">
+	<meta name="copyright" content="@geedmo">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-11-27T00:00:00+01:00">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/documenter_style.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+	
+	<style>
+		html, body{background-color:#FCFCFC;color:#555555;}
+		h1,h2,h3,h4,h5,h6{color:#555555;}
+		section table{background-color:#FCFCFC;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		a.brand{background-image:url();}
+		a, a:hover, a:active{color:#3F51B5;}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #A1A2A3;}
+		div.navbar-inner, .navbar .nav li ul{background:#F0F0F0;color:#222222;}
+		a.btn-navbar{background:#F0F0F0;color:#222222;}
+		.navbar .nav li a{color:#222222;text-shadow:1px 1px 0px #EEEEEE;}
+		.navbar .nav li a:hover, .navbar .nav li.active a{text-shadow:none;}
+		div.navbar-inner ul{}
+		.marketing-byline{color:#A1A2A3;}
+		.navbar .nav > li a{color:#444444;}
+		.navbar .nav > li a:hover, a.btn-navbar:hover{background:#444444;color:#DDDDDD;}
+		.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active{background-color:#444444;color:#DDDDDD;}
+		.navbar .nav li ul li a:hover{background:#444444;color:#DDDDDD;}
+		.navbar .nav li ul li a:active{background:#444444;color:#DDDDDD;}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #3F51B5, #3F51B5);
+			  background-image: -ms-linear-gradient(top, #3F51B5, #3F51B5);
+			  background-image: -webkit-gradient(linear, 0 0, 0 3F51B5%, from(#F0F0F0), to(#3F51B5));
+			  background-image: -webkit-linear-gradient(top, #3F51B5, #3F51B5);
+			  background-image: -o-linear-gradient(top, #3F51B5, #3F51B5);
+			  background-image: linear-gradient(top, #3F51B5, #3F51B5);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3F51B5', endColorstr='#3F51B5', GradientType=0);
+			  border-color: #3F51B5 #3F51B5 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  background-color: #3F51B5;
+		}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+	
+	
+    </head>
+    
+<body class="documenter-project-naut" data-spy="scroll" id="top">
+
+<!-- Documentation Navbar -->
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> 
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
+			<a class="brand" href="#">Naut - Bootstrap Admin Theme + Angularjs</a>
+			<div class="nav-collapse">
+			<ul class="nav">
+					
+			<li><a href="#overview" title="Overview">Overview</a></li>
+			<li><a href="#structure" title="Structure">Structure</a>
+				<ul>
+					<li><a href="#structure_enviroments">Enviroments</a>
+				</ul>
+			</li>
+			<li><a href="#layout" title="Layout">Layout</a></li>
+			<li><a href="#gulp" title="Gulp">Gulp</a></li>
+			<li><a href="#rtl" title="RTL">RTL</a></li>
+			<li><a href="#routes" title="Routes">Routes</a></li>
+			<li><a href="#themes" title="Themes">Themes</a></li>
+			<li><a href="#seed_project" title="Seed project">Seed project</a></li>
+			<li><a href="#projects" title="Projects">Projects</a>
+				<ul>
+					<li><a href="#projects_angular_fullstack">Angular FullStack</a>
+					<li><a href="#projects_visual_studio_mvc5">Visual Studio MVC5</a>
+				</ul>
+			</li>
+			<li><a href="#credits" title="Credits">Credits</a></li>
+
+			</ul>
+			</div>
+		</div>
+	</div>
+</div> <!-- End of Navbar -->
+
+<!-- Main Container Beginning -->			
+			
+<div class="container" id="documenter_content">
+    
+	<div id="documenter-cover">
+	<div class="masthead">
+	    <h1>Naut - Bootstrap Admin Theme + Angularjs</h1>
+	    <p></p>
+	    <ul class="marketing-byline">
+			<li>created: 03/22/2015</li>
+			<li>latest update: 11/27/2015</li>
+			<li>by: @geedmo</li>
+			<li><a href=""></a></li>
+		</ul>
+	    <p class="download-info">
+			<a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#103;&#101;&#101;&#100;&#109;&#111;&#46;&#99;&#111;&#109;" class="btn btn-primary btn-large">Support</a> 
+		</p>
+		
+	</div> <!-- masthead -->
+	
+   <div id="intro">
+    <p class="highlight hero-unit">Bootstrap Admin Theme + Angularjs</p>
+   </div> <!-- intro -->
+   
+	</div>
+      
+  <section id="overview">
+	<div class="page-header"><h3>Overview</h3><hr class="notop"></div>
+<div>
+	<div>
+		Thank you for purchasing this theme. If you have any questions about the template, please feel free to contact me via: &#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#103;&#101;&#101;&#100;&#109;&#111;&#46;&#99;&#111;&#109;.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Thanks very much!</div>
+</div>
+<div>
+	All the best and enjoy coding.</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<p>
+	Main structure</p>
+<pre class="prettyprint lang-plain linenums">
++---angularjs
+|   +---app
+|   |   +---css
+|   |   +---img
+|   |   +---js
+|   |   +---langs
+|   |   +---plugins
+|   |   +---views
+|   |       +---cached
+|   +---node_modules
+|   +---server
+|   |   +---calendar
+|   |   +---chart
+|   +---src
+|   |   +---jade
+|   |   |   +---views
+|   |   |       +---cached
+|   |   +---js
+|   |   |   +---custom
+|   |   |   +---modules
+|   |   +---less
+|   |       +---app
+|   |       +---bootstrap
+|   +---vendor
++---<strong>index.html</strong>
++---angularjs-seed/
++---documentation/</pre>
+<h4 id="structure_enviroments">Enviroments</h4>
+<p>
+	<u>By using gulp</u> you can work easily with two enviroments. One for development and another for production. Both of them uses the project root folder as the web root to serve the application and the&nbsp;most important difference is how the index file links assets.&nbsp;</p>
+<p>
+	<strong>Development</strong></p>
+<p>
+	This enviroment is what you get after uncompress the package. The index links each vendor assets necessary to start the application and each file of the javascript used in the theme (i.e. files located under the /src/js folder).<br>
+	The css linked are bootstrap.css and styles.css files, where the second is the main stylesheet.</p>
+<p>
+	In this enviroment, the css is compiled from LESS using sourcemaps, allowing to see (debug) in Chrome DevTools from which LESS files come a certain rule.</p>
+<p>
+	Development enviroment is generated with gulp tasks <strong>&#39;default&#39; </strong>and <strong>&#39;serve&#39;</strong></p>
+<p>
+	<strong>Production</strong></p>
+<p>
+	This enviroment is what you should use to deploy your application. It concats all Javascript in two files, one for vendor assets and another for the theme scripts.&nbsp;<br>
+	Same for css, but only generates one single stylesheet (with bootstrap and the theme styles).</p>
+<p>
+	This enviroment is generated with gulp tasks<strong> &#39;build&#39; </strong>and <strong>&#39;serve-build&#39;</strong></p>
+</section>
+<section id="layout">
+	<div class="page-header"><h3>Layout</h3><hr class="notop"></div>
+<p>	<strong>Index Layout</strong></p>
+<p>	Since this theme is a Single Page Application, the index file will init the application and will load the main file for each type of layout. The standard layout used in most of the view is the standard layout (see below)</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!DOCTYPE html&gt;
+&lt;!--[if IE 9 ]&gt;    &lt;html class=&quot;ie9&quot; lang=&quot;en&quot; ng-app=&quot;naut&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt;
+&lt;html lang=&quot;en&quot; ng-app=&quot;naut&quot;&gt;
+&lt;!--&lt;![endif]--&gt;
+
+&lt;head&gt;
+   &lt;meta charset=&quot;utf-8&quot;&gt;
+   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+   &lt;meta name=&quot;description&quot; content=&quot;{{app.description}}&quot;&gt;
+   &lt;meta name=&quot;keywords&quot; content=&quot;app, responsive, angular, bootstrap, dashboard, admin&quot;&gt;
+   &lt;title data-ng-bind=&quot;pageTitle()&quot;&gt;Naut - Bootstrap Admin Theme + AngularJS&lt;/title&gt;
+
+   # Styles
+
+&lt;/head&gt;
+&lt;body ng-clok=&quot;&quot; ng-class=&quot;{ &#39;layout-fixed&#39; : app.layout.isFixed, 
+                             &#39;layout-boxed&#39; : app.layout.isBoxed, 
+<span style="font-family: Arial, Verdana, sans-serif;">                                                    </span>&#39;layout-dock&#39; : app.layout.isDocked, 
+                             &#39;layout-material&#39;: app.layout.isMaterial, 
+                             &#39;aside-offscreen&#39; : app.sidebar.isOffscreen, 
+                             &#39;footer-hidden&#39;: app.footer.hidden, 
+                             &#39;aside-mini&#39;: app.sidebar.isMini,
+                             &#39;aside-right&#39;: app.sidebar.isRight,
+                             &#39;in-app&#39;: !$state.includes(&#39;page&#39;)}&quot;&gt;
+
+   &lt;div data-ui-view=&quot;&quot; data-autoscroll=&quot;false&quot; ng-controller=&quot;CoreController&quot; class=&quot;app-container&quot;&gt;&lt;/div&gt;
+   
+    &lt;!-- Settings--&gt;
+   &lt;div ng-include=&quot;&#39;templates/settings.html&#39;&quot; ng-class=&quot;{&#39;visible&#39;: showSettings}&quot; ng-init=&quot;showSettings = false&quot; class=&quot;settings-wrapper&quot;&gt;&lt;/div&gt;
+   &lt;!-- End Settings--&gt;
+   
+   &lt;!-- Layer Morph --&gt;
+   &lt;div class=&quot;layer-morph-overlay&quot;&gt;
+      &lt;div class=&quot;layer-morph-inner bg-info&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div layer-morph-close=&quot;&quot; class=&quot;layer-morph-close&quot;&gt;
+      &lt;em class=&quot;icon-cross&quot;&gt;&lt;/em&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;layer-morph-container bg-info&quot;&gt;
+      &lt;div class=&quot;layer-morph-wrapper&quot;&gt;
+         &lt;div id=&quot;layer-search&quot; ng-include=&quot;&#39;templates/layer-search.html&#39;&quot; class=&quot;layer-morph&quot;&gt;&lt;/div&gt;
+         &lt;div class=&quot;layer-morph-footer&quot;&gt;Naut&lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;!-- End Layer Morph --&gt;
+
+   # Scripts
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>	&nbsp;</p>
+<p>	<strong>Standard layout (app.html)</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- top navbar--&gt;
+&lt;header ng-include=&quot;&#39;templates/top-navbar.html&#39;&quot; ng-class=&quot;app.theme.topbar&quot;&gt;&lt;/header&gt;
+&lt;!-- Sidebar--&gt;
+&lt;aside ng-include=&quot;&#39;templates/sidebar.html&#39;&quot; ng-class=&quot;app.theme.sidebar&quot;&gt;&lt;/aside&gt;
+&lt;!-- Main--&gt;
+&lt;section&gt;
+   &lt;!-- Content--&gt;
+   &lt;div ui-view=&quot;&quot; autoscroll=&quot;false&quot; ng-class=&quot;app.views.animation&quot; class=&quot;app&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- Page footer--&gt;
+&lt;footer ng-include=&quot;&#39;templates/footer.html&#39;&quot;&gt;&lt;/footer&gt;</pre>
+<p>	&nbsp;</p>
+<p>	<strong>Full Height Layout (app-fh.html)</strong></p>
+<p>	This layout allows to expand the content to the full size of the window</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- top navbar--&gt;
+&lt;header ng-include=&quot;&#39;templates/top-navbar.html&#39;&quot; ng-class=&quot;app.theme.topbar&quot;&gt;&lt;/header&gt;
+&lt;!-- Sidebar--&gt;
+&lt;aside ng-include=&quot;&#39;templates/sidebar.html&#39;&quot; ng-class=&quot;app.theme.sidebar&quot;&gt;&lt;/aside&gt;
+&lt;!-- Main--&gt;
+&lt;section&gt;
+   &lt;!-- Content--&gt;
+   &lt;div ui-view=&quot;&quot; autoscroll=&quot;false&quot; ng-class=&quot;app.views.animation&quot; class=&quot;app app-fh&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- Page footer--&gt;
+&lt;footer ng-include=&quot;&#39;templates/footer.html&#39;&quot;&gt;&lt;/footer&gt;</pre>
+<p>	&nbsp;</p>
+<p>	<strong>Dock (or Horizontal Nav) Layout (app-dock.html)</strong></p>
+<p>	This layout removes the sidebar and uses the header topbar as main navigation.</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- top navbar--&gt;
+&lt;header ng-include=&quot;&#39;templates/top-navbar-dock.html&#39;&quot; ng-class=&quot;app.theme.topbar&quot;&gt;&lt;/header&gt;
+&lt;!-- Main--&gt;
+&lt;section&gt;
+   &lt;!-- Content--&gt;
+   &lt;div ui-view=&quot;&quot; autoscroll=&quot;false&quot; ng-class=&quot;app.views.animation&quot; class=&quot;app&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- Page footer--&gt;
+&lt;footer ng-include=&quot;&#39;templates/footer.html&#39;&quot;&gt;&lt;/footer&gt;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Class based layout</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	Other layouts can be activated with a classname &nbsp;applied to the body</div>
+<div>
+	&nbsp;</div>
+<pre>
+<strong>&#39;layout-fixed&#39; : </strong>Makes the sidebar and header fixed position
+
+<strong>&#39;layout-boxed&#39; : </strong>Makes the content boxed with a limted width
+
+<strong>&#39;layout-dock&#39; : </strong>Helps the layout dock (horizontal nav)
+
+<strong>&#39;layout-material&#39;: </strong>A layout similar to the used by the Material specification
+
+<strong>&#39;aside-offscreen&#39; : </strong>Determines if the sidebar is visible on screen or not.
+
+<strong>&#39;footer-hidden&#39;: </strong>Allows to hide the footer
+
+<strong>&#39;aside-mini&#39;</strong>: Activates the collapsed sidebar with icons only. Text appears on hover.
+
+&#39;aside-right&#39;: Shows the sidebar right positioned
+
+<strong>&#39;in-app&#39;: </strong>When present, an application route is active. If not, we are in presence of a page.</pre>
+<div>
+	&nbsp;</div>
+</section>
+<section id="gulp">
+	<div class="page-header"><h3>Gulp</h3><hr class="notop"></div>
+<p>
+	The structure of this theme is optimized to make use a GULP to build the production version.</p>
+<p>
+	To install gulp you will need first nodejs.</p>
+<pre class="prettyprint lang-plain linenums">
+- Download NodeJS from https://nodejs.org/</pre>
+<p>
+	Now you can install gulp and bower.<br>
+	Open a console and run the following command</p>
+<pre class="prettyprint lang-plain linenums">
+$ npm -g install bower gulp</pre>
+<div class="alert alert-error">
+	<strong>Bower</strong> will require <strong>GIT </strong>to download new dependencies, so you may have to install it&nbsp;http://git-scm.com/book/en/v2/Getting-Started-Installing-Git</div>
+<p>
+	Now you have all this tools, you can move to the root folder of your project and run</p>
+<pre class="prettyprint lang-plain linenums">
+$ npm install</pre>
+<p>
+	This command will install node modules and vendor assets (if necessary) to allow build the theme for production and also use the live reload feature.</p>
+<p>
+	<strong>Main Gulp tasks supported</strong></p>
+<pre class="prettyprint lang-plain linenums">
+<strong>gulp</strong>
+- this is <strong>default </strong>command, will compile the theme for development and will watch for changes
+
+<strong>gulp build</strong>
+- compiles the theme for production, will concat all assets and minify them in the app folder ready for deploy.
+
+<strong>gulp clean</strong>
+- this task will remove files generated by the compilation process
+
+<strong>gulp compile</strong>
+- just in case you want to compile for development without watch (optionally run clean task before)
+
+<strong>gulp serve</strong>
+- will start a server for development at http://localhost:3000
+
+<strong>gulp serve-build</strong>
+- will start a server with the production version of the theme
+
+<strong>gulp plato</strong>
+- this command will generate a plato report in the root folder of the theme https://github.com/es-analysis/plato</pre>
+<p>
+	&nbsp;</p>
+<div class="alert alert-info">
+	Most of the configurations (paths, names, ports, etc) can be changed by editing the file<strong> gulp.config.js</strong></div>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Compiling raw HTML</strong></p>
+<p>
+	&nbsp;</p>
+<p>
+	To work with HTML markup instead of JADE templates do the following</p>
+<p>
+	1. Create a folder to store the raw html files. Name it <strong>&nbsp;/src/html</strong></p>
+<p>
+	2. Copy the file <strong>index.html </strong>from the root folder into the <strong>html</strong> folder</p>
+<p>
+	3. Copy the folder <strong>/app/views&nbsp;</strong>into the <strong>html</strong> folder in step 1</p>
+<p>
+	4. Run the following command</p>
+<pre class="prettyprint lang-plain linenums">
+$ gulp --usehtml</pre>
+<p>
+	5. <strong>Done</strong>. If everything goes fine you can ignore jade templates and all changes in your html file will be replicated into the app folder</p>
+<div class="alert alert-info">
+	Optionally, you can <strong>drop the jade folder and run gulp clean</strong> to make sure that your tasks are generating the html files correctly.</div>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Compiling SCSS</strong></p>
+<p>
+	&nbsp;</p>
+<p>
+	To work with SCSS markup instead of LESS styles you have to use the files under the folder src/scss</p>
+<p>
+	Then, in order to compile this files run the following command</p>
+<pre class="prettyprint lang-plain linenums">
+$ gulp --usescss</pre>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="rtl">
+	<div class="page-header"><h3>RTL</h3><hr class="notop"></div>
+<p>	RTL version is generated via the tool Gulp tasks runner.</p>
+<p>	It uses a plugin called <a href="https://www.npmjs.com/package/gulp-rtlcss">rtlcss</a>&nbsp;that converts the css from LTR to RTL inverting properties and taking other considerations.</p>
+<p>	You can learn more about from the documentation at <a href="https://github.com/MohammadYounes/rtlcss">https://github.com/MohammadYounes/rtlcss</a></p>
+<p>	<strong>Usage</strong></p>
+<p>	Usage is simple. When you run <strong>gulp</strong> just add the following modifier&nbsp;</p>
+<pre class="prettyprint lang-plain linenums">
+$ gulp --usertl</pre>
+<p>	The main styles of the template and Bootstrap will be generated in RTL &nbsp;mode automatically.</p>
+<p>	&nbsp;</p>
+<p>	&nbsp;</p>
+<p>	&nbsp;</p>
+</section>
+<section id="routes">
+	<div class="page-header"><h3>Routes</h3><hr class="notop"></div>
+<p>	This theme uses the <strong>UI Router </strong>provided by AngularUI team. This router allows to set states and and inherits dependecies for nested states.</p>
+<p>	To configure a route, see the module <strong>routes -&gt; routes.config.js</strong><br>
+	For example:&nbsp;Here we are adding a route called&nbsp;myRoute.</p>
+<pre class="prettyprint lang-js linenums">
+        .state(&#39;app.myRoute&#39;, {
+          url: &#39;/myRoute&#39;,
+          templateUrl: Route.base(&#39;myRoute.html&#39;),
+          resolve: {
+            assets: Route.require( ... )
+          }
+        })</pre>
+<div>
+	&nbsp;</div>
+<div>
+	The resolve property is used to load assets required for a specific route. Those assets can be information requested to an internal api or a vendor assets required via lazy load.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Lazy load assets</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This theme uses a constant to define only in one place the paths to each vendor file.</div>
+<div>
+	The constants is&nbsp;<strong>VENDOR_ASSETS</strong> and is defined in module <strong>routes -&gt;&nbsp;vendor.constants.js</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	After adding the paths for a specific vendor plugin, is necessary to load in the route using the Route.require() function passing the name of the module or plugin to load.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>For example, </strong>to require toaster for the above route, lets asume we haven&#39;t included yet in the theme, so we need to declare the new module in VENDOR_ASSETS constant</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-js linenums">
+...
+modules: [
+ {name: &#39;toaster&#39;,           files: [&#39;../vendor/angularjs-toaster/toaster.js&#39;,
+                                     &#39;../vendor/angularjs-toaster/toaster.css&#39;]},
+...</pre>
+	<div>
+		&nbsp;</div>
+	<div>
+		After this, we will now to tell to the UIRouter to load this assets via the resolve property</div>
+	<div>
+		&nbsp;</div>
+</div>
+<pre class="prettyprint lang-js linenums">
+        .state(&#39;app.myRoute&#39;, {
+          url: &#39;/myRoute&#39;,
+          templateUrl: Route.base(&#39;myRoute.html&#39;),
+          resolve: {
+<strong>            assets: Route.require( &#39;toaster&iquest;&#39; )</strong>
+          }
+        })</pre>
+<div class="alert alert-info">
+	Note that the name if the module is the oficial module name.</div>
+<div class="alert alert-info">
+	You can use custom name for single scripts like jQuery plugins that doesn&#39;t init an Angularjs module.</div>
+</section>
+<section id="themes">
+	<div class="page-header"><h3>Themes</h3><hr class="notop"></div>
+<p>	This themes uses class for background color to apply a theme.</p>
+<p>	You can see the available options in view Components -&gt; Palette</p>
+<p>	Each <strong>.bg-*</strong> class has been created to consider style the elements within. You can see in the following markup example (from file app.html) how the ng-class directive is used to set the current theme.</p>
+<p>	&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- top navbar--&gt;
+&lt;header ng-include=&quot;&#39;templates/top-navbar.html&#39;&quot; ng-class=&quot;app.theme.topbar&quot;&gt;&lt;/header&gt;
+&lt;!-- Sidebar--&gt;
+&lt;aside ng-include=&quot;&#39;templates/sidebar.html&#39;&quot; ng-class=&quot;app.theme.sidebar&quot;&gt;&lt;/aside&gt;
+&lt;!-- Main--&gt;
+&lt;section&gt;
+   &lt;!-- Content--&gt;
+   &lt;div ui-view=&quot;&quot; autoscroll=&quot;false&quot; ng-class=&quot;app.views.animation&quot; class=&quot;app&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- Page footer--&gt;
+&lt;footer ng-include=&quot;&#39;templates/footer.html&#39;&quot;&gt;&lt;/footer&gt;</pre>
+<p>	If you application doesn&#39;t use the theme changer you can simply remove all ng-class attributes and add the bg-* classname to each element.</p>
+<p>	&nbsp;</p>
+<p>	To see and change the different configuration options, see the <strong>SettingsController</strong>.</p>
+<p>	&nbsp;</p>
+</section>
+<section id="seed_project">
+	<div class="page-header"><h3>Seed project</h3><hr class="notop"></div>
+<p>	It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects. It has all necessary resources/files to help you started new project. As your project will grow you will need to add new resources.</p>
+<p>	Look at the full version to select the elements and resources you want to use.</p>
+</section>
+<section id="projects">
+	<div class="page-header"><h3>Projects</h3><hr class="notop"></div>
+<h4 id="projects_angular_fullstack">Angular FullStack</h4>
+<p>	A project boilerplate for an application based on the <a href="https://github.com/DaftMonk/generator-angular-fullstack">generator-angular-fullstack</a>&nbsp;so you can find more details of this project at its website.</p>
+<p>	Angular fulltstack is Yeoman generator for creating MEAN stack applications, using MongoDB, Express, AngularJS, and Node - lets you quickly set up a project following best practices.</p>
+<p>	Main changed were made in the client folder. It has the following structure</p>
+<pre class="prettyprint lang-plain linenums">
++---client
+    +---app
+    |   +---account
+    |   +---app
+    |   +---dashboard
+    |   +---_naut
+    |       +---js
+    |       +---less
+    +---assets
+    |   +---images
+    +---bower_components
+    +---components
+    |   +---auth
+    |   +---mongoose-error
+    |   +---partials
+    +---vendor</pre>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>client/app/_naut:</strong> contains the main js and less files in similar structure like the original project for easy copy/paste required features.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>client/app/bower_components</strong>: contains bower dependecies necessary to run the application (not for lazy loading)</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>client/app/vendor</strong>:&nbsp;contains bower dependecies use with lazy loading</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>clients/app/components/partials</strong>: contains partials files loaded from AngularJS ng-include (sidebar, header, etc)</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div class="alert alert-error">
+	<strong>Important</strong>: There are <strong>2 bower.json files</strong>. One is located at the root level and the second one in the app folder. The second one is used <u><strong>only </strong></u>for lazy loading.</div>
+<div class="alert alert-error">
+	Since angular-fullstack doesn&#39;t support lazyloading I&#39;had to found a workaround to download bower components in a place where the build system is not watching, in other case all components in the bower_components folder are included in the index and loaded with all views.</div>
+<div>
+	&nbsp;</div>
+<h4 id="projects_visual_studio_mvc5">Visual Studio MVC5</h4>
+<p>	This project is based on the Seed project and is a boilerplate tor an application using MVC5 and AngularJS.</p>
+<p>	The folder structure is</p>
+<pre class="prettyprint lang-plain linenums">
++---Naut
+  +---App_Data
+  +---App_Start
+  +---Content
+  +---Controllers
+  +---Images
+  |   +---user
+  +---Langs
+  +---Models
+  +---Properties
+  +---Scripts
+  +---Vendor
+  +---Views
+      +---Dashboard
+      +---Layout
+      +---Shared
+      +---Templates</pre>
+<div>
+	Most of the folder are used like in any common MVC5 application. The following are the main folder used to implement the theme features:</div>
+<p>	<strong>Content</strong>: contains the css for the customized bootstrap stylesheet and the theme stylesheet</p>
+<p>	<strong>Scripts</strong>: contains the modular Javascript architecture used in the theme.&nbsp;</p>
+<p>	<strong>Vendor</strong>: contains vendor assets. Some are linked from Bundles and other are requested using the ocLazyLoad module.</p>
+<p>	<strong>Views</strong>:</p>
+<p>	&nbsp; /<strong>Dashboard</strong>: contains the dashboard demostration</p>
+<p>	&nbsp;&nbsp;/<strong>Layout</strong>: contains the main markup for the theme layout</p>
+<p>	&nbsp;&nbsp;/<strong>Shared</strong>: contains the main view loaded when the application starts</p>
+<p>	&nbsp; /<strong>Templates</strong>: contains the templates requested from angular js ng-include directive (sidebar, header, etc)</p>
+<p>	&nbsp;</p>
+<p>	All assets are placed in Bundles</p>
+<p>	For example</p>
+<pre class="prettyprint lang-js linenums">
+// Bootstrap Styles
+bundles.Add(new StyleBundle(&quot;~/bundles/BootstrapStyles&quot;).Include(
+          &quot;~/Content/bootstrap.css&quot;));
+// Application Styles
+bundles.Add(new StyleBundle(&quot;~/bundles/ApplicationStyles&quot;).Include(
+          &quot;~/Content/styles.css&quot;));
+// Application Script
+bundles.Add(new ScriptBundle(&quot;~/bundles/ApplicationScripts&quot;)
+    .Include(&quot;~/Scripts/app.module.js&quot;)
+    .IncludeDirectory(&quot;~/Scripts/modules&quot;, &quot;*.js&quot;, true)
+);
+//----------------------
+// Vendor Bundle
+//----------------------
+bundles.Add(new ScriptBundle(&quot;~/bundles/VendorScripts&quot;).Include(
+...
+));</pre>
+<p>	All bundles are defined in the file <strong>App-start/BundleConfig.cs</strong></p>
+<p>	&nbsp;</p>
+<p>	&nbsp;</p>
+<p>	&nbsp;</p>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<p>	The following projects has been used in this item</p>
+<div>
+	<div>
+		https://github.com/PascalPrecht/bower-angular-translate</div>
+	<div>
+		https://github.com/chieffancypants/angular-loading-bar</div>
+	<div>
+		https://github.com/angular-ui/bootstrap-bower</div>
+	<div>
+		https://github.com/yunlzheng/angular-knob</div>
+	<div>
+		https://github.com/angular-ui/ui-router</div>
+	<div>
+		https://github.com/PascalPrecht/bower-angular-translate-loader-url</div>
+	<div>
+		https://github.com/PascalPrecht/bower-angular-translate-loader-static-files</div>
+	<div>
+		https://github.com/PascalPrecht/bower-angular-translate-storage-cookie</div>
+	<div>
+		https://github.com/PascalPrecht/bower-angular-translate-storage-local</div>
+	<div>
+		https://github.com/angular/bower-angular</div>
+	<div>
+		https://github.com/angular-ui/ui-utils</div>
+	<div>
+		https://github.com/angular/bower-angular-cookies</div>
+	<div>
+		http://fontawesome.io</div>
+	<div>
+		http://fontawesome.io</div>
+	<div>
+		https://github.com/ocombe/ocLazyLoad</div>
+	<div>
+		https://github.com/aterrien/jQuery-Knob</div>
+	<div>
+		https://github.com/angular/bower-angular-route</div>
+	<div>
+		http://rocha.la/jQuery-slimScroll/</div>
+	<div>
+		https://github.com/krzysu/flot.tooltip</div>
+	<div>
+		https://github.com/sindresorhus/screenfull.js</div>
+	<div>
+		http://erikflowers.github.io/weather-icons/</div>
+	<div>
+		https://github.com/gsklee/ngStorage</div>
+	<div>
+		https://github.com/components/jqueryui</div>
+	<div>
+		https://github.com/esvit/ng-table</div>
+	<div>
+		https://github.com/angular/bower-angular-animate</div>
+	<div>
+		http://fullcalendar.io/</div>
+	<div>
+		https://github.com/daneden/animate.css</div>
+	<div>
+		https://github.com/blueimp/Gallery</div>
+	<div>
+		https://github.com/jirikavi/AngularJS-Toaster</div>
+	<div>
+		https://github.com/moment/moment</div>
+	<div>
+		https://github.com/lgalfaso/angular-dynamic-locale</div>
+	<div>
+		https://github.com/angular/bower-angular-touch</div>
+	<div>
+		https://github.com/Modernizr/Modernizr</div>
+	<div>
+		https://github.com/voidberg/html5sortable</div>
+	<div>
+		https://github.com/angular/bower-angular-sanitize</div>
+	<div>
+		https://github.com/alexk111/ngImgCrop</div>
+	<div>
+		http://vitalets.github.io/angular-xeditable</div>
+	<div>
+		https://github.com/angular/bower-angular-resource</div>
+	<div>
+		http://angular-ui.github.com</div>
+	<div>
+		https://github.com/markusslima/bootstrap-filestyle</div>
+	<div>
+		https://github.com/jquery/jquery</div>
+	<div>
+		https://github.com/nervgh/angular-file-upload</div>
+	<div>
+		https://github.com/Venturocket/angular-slider</div>
+	<div>
+		https://github.com/fraywing/textAngular</div>
+	<div>
+		https://github.com/angular-ui/ui-map</div>
+	<div>
+		https://github.com/choffmeister/roboto-fontface-bower</div>
+	<div>
+		https://github.com/angular-ui/ui-select</div>
+	<div>
+		https://github.com/esvit/ng-table-export</div>
+	<div>
+		https://github.com/furf/jquery-ui-touch-punch</div>
+	<div>
+		https://github.com/JohnPozy/flot-spline</div>
+	<div>
+		https://github.com/angular/bower-angular-i18n</div>
+	<div>
+		https://github.com/dbushell/Nestable</div>
+	<div>
+		https://github.com/brettshollenberger/ui-select</div>
+	<div>
+		https://github.com/nickperkinslondon/angular-bootstrap-nav-tree</div>
+	<div>
+		http://jvectormap.com/</div>
+	<div>
+		http://github.com/noahblon/animated-climacons</div>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	Demo Images from</div>
+<div>
+	&nbsp;</div>
+<div>
+	https://www.tonicons.com/free-profile-avatars/</div>
+<div>
+	http://unsplash.com</div>
+<div>
+	&nbsp;</div>
+<div>
+	Mockups</div>
+<div>
+	&nbsp;</div>
+<div>
+	http://www.techandall.com/web-collage-with-a-perspective-view/</div>
+<div>
+	https://dribbble.com/shots/1333240-Chrome-Browser-Mockup-PSD</div>
+</section>
+
+
+
+    <hr />
+
+<footer>
+    <p>Copyright @geedmo 2015 made with the <a href="http://rxa.li/documenter">Documenter v2.0</a></p>
+</footer>
+
+</div><!-- /container --> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script>document.createElement('section');var duration='500',easing='swing';</script>
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/jquery.scrollTo.js"></script>
+<script src="assets/js/jquery.easing.js"></script>
+<script src="assets/js/scripts.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-min.js"></script> 
+</body>
+</html>
