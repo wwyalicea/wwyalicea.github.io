@@ -52,7 +52,7 @@
           },
           sidebar: {
             isOffscreen: true,
-            isMini: true,
+            isMini: false,
             isRight: false
           },
           footer: {
@@ -68,7 +68,7 @@
             topbar:        'bg-primary'
 		  },
 		  isLoggedIn: false,
-		  displayCreateNewCasePanels: false,
+		  displayHistory: false,
         };
 
         $rootScope.treeCtrl = {};

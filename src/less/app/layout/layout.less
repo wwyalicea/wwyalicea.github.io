@@ -1,7 +1,7 @@
 /**
    Component: layout.less
 */
- 
+
 @aside-wd:                                280px;
 @aside-mini-wd:                           64px;
 
@@ -47,7 +47,7 @@ section.content {
   height: auto;
   // overflow: hidden;
   // background-color: @body-bg;
-  
+
   > header {
     position: relative;
     z-index: @z-index-header;
@@ -116,10 +116,10 @@ section.content {
     padding-left: 0;
     padding-right: 0;
   }
- 
+
   // expand over wrapper padding
   .unwrap {
-    margin: -@content-padding; 
+    margin: -@content-padding;
   }
 
 }
@@ -239,7 +239,7 @@ section.content {
 }
 
 // Dock Layout
-// ----------------------------------- 
+// -----------------------------------
 
 .layout-dock {
   .app-container {
@@ -252,7 +252,7 @@ section.content {
 }
 
 // Hidden Footer
-// ----------------------------------- 
+// -----------------------------------
 
 .footer-hidden {
   .container-fh {
@@ -268,7 +268,7 @@ section.content {
 
 
 // Full Height Layout
-// ----------------------------------- 
+// -----------------------------------
 .app-fh {
   position: absolute;
   width: auto;
@@ -281,7 +281,7 @@ section.content {
   .transition(left @layout-transition-time ease);
   will-change: left;
   -webkit-overflow-scrolling: touch;
-  
+
   @media @tablet {
     left: @aside-wd;
   }
@@ -295,7 +295,7 @@ section.content {
 }
 
 // Table based layout
-// ----------------------------------- 
+// -----------------------------------
 
 // Table display types to use under .layout-fs
 .l-table,
@@ -462,10 +462,10 @@ section.content {
       > footer {
         margin-left: @aside-mini-wd;
       }
-    
+
       > aside {
         width: @aside-mini-wd;
-        // restore all transitions because sidebar mini 
+        // restore all transitions because sidebar mini
         // animates the slide movement and the width
         .transition(all @layout-transition-time ease 0s);
         &:hover {

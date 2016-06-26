@@ -761,9 +761,6 @@ section.content {
     -o-transition: all 0.35s ease 0s;
     transition: all 0.35s ease 0s;
   }
-  .aside-mini .app-container > aside:hover {
-    width: 280px;
-  }
   .aside-mini .app-fh {
     left: 0;
     margin-left: inherit;
@@ -940,15 +937,6 @@ section.content {
     -webkit-transition: margin 0.2s linear;
     -o-transition: margin 0.2s linear;
     transition: margin 0.2s linear;
-  }
-  .aside-mini .sidebar:hover .sidebar-nav > .nav li .sidebar-subnav {
-    display: block;
-  }
-  .aside-mini .sidebar:hover .sidebar-nav > .nav li > a > span {
-    opacity: 1;
-  }
-  .aside-mini .sidebar:hover .sidebar-nav > .nav li > a > .label {
-    margin: 2px 0 0 0;
   }
 }
 .ipad .sidebar > .sidebar-nav > .nav > li > a > .pull-right,
