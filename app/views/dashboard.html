@@ -5,7 +5,7 @@
 
    <div class="row text-center text-muted m0" ng-hide="app.displayHistory">
     	<div class="col-xs-12 col-md-2 col-md-offset-3">
-            <div class="panel panel-default">
+            <div class="panel panel-default" style="cursor:pointer;">
                 <div ripple ng-click="employerSelected = true;" class="bb br" ng-class="{'bg-primary': employerSelected, 'pv-sm': app.isLoggedIn, 'pv-xxl': !app.isLoggedIn}" >
                     <em class="fa fa-user fa-2x mv"></em>
                     <p>Patronos</p>
@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-md-2">
-            <div class="panel panel-default">
+            <div class="panel panel-default" style="cursor:pointer;">
                 <div class="bb-lg br" ng-class="{'pv-xxl': !app.isLoggedIn, 'pv-sm': app.isLoggedIn, 'bg-gray': app.isLoggedIn}">
                     <em class="fa fa-medkit fa-2x mv"></em>
                     <p>Proveedores</p>
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-md-2">
-            <div class="panel panel-default">
+            <div class="panel panel-default" style="cursor:pointer;">
                 <div class="bb-lg br" ng-class="{'pv-xxl': !app.isLoggedIn, 'pv-sm': app.isLoggedIn, 'bg-gray': app.isLoggedIn}">
                     <em class="fa fa-bed fa-2x mv"></em>
                     <p>Lesionados</p>
@@ -30,7 +30,7 @@
         </div>
     </div>
     <!-- <br> -->
-	<div ng-show="app.displayHistory">
+	<div ng-show="app.displayHistory && !dashboard.goToWizard">
 		<div class="row" >
 			<div class="app-view-header text-center">
 				Historial de Certificados de Deuda Solicitados
@@ -38,7 +38,7 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-11 col-md-offset-1">
-				<button type="button" ripple class="mr mb-sm btn btn-default" name="button">
+				<button type="button" ripple class="mr mb-sm btn btn-default" name="button" ng-click="dashboard.goToWizard = true">
 					Pedir Certificado Nuevo
 					<span class="ripple">
 						<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
@@ -48,11 +48,11 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-xs-11 col-md-10 col-md-offset-1">
+			<div class="col-xs-12 col-md-10 col-md-offset-1">
 				<div class="panel panel-default" ng-repeat="poliza in dashboard.polizas track by poliza.id">
 					<div class="panel-heading">
 						<div class="panel-title" ng-click="poliza.isCollapsed = !poliza.isCollapsed" style="cursor:pointer;">
-							<h3 class="text-muted m0">Poliza {{poliza.pNum}}</h3>
+							<h4 class="text-muted m0">Poliza {{poliza.pNum}}</h4>
 						</div>
 					</div>
 					<div class="panel-body" uib-collapse="poliza.isCollapsed">
@@ -61,6 +61,135 @@
 								<div class="panel panel-default">
 									<div class="panel-body bg-cfse" ripple ng-click="dashboard.download()" style="cursor:pointer;">
 										<h1 class="text-center mt">{{p.date}}</h1><span class="fa fa-file-pdf-o"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-show="dashboard.goToWizard">
+		<div class="row" >
+			<div class="app-view-header text-center">
+				Solicitud de Nuevo Certificado de Deuda
+			</div>
+			<div class="col-xs-12 col-md-10 col-md-offset-1">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div ng-init="activeStep = 1" class="wizard">
+							<ul class="steps-bar">
+								<li ng-class="{'active':activeStep >= 1}" class="active">
+									<span>Patrono</span>
+								</li>
+								<li ng-class="{'active':activeStep >= 2}">
+									<span>Poliza</span>
+								</li>
+								<li ng-class="{'active':activeStep >= 3}">
+									<span>Fecha</span>
+								</li>
+								<li ng-class="{'active':activeStep >= 4}">
+									<span>Certificado</span>
+								</li>
+							</ul>
+							<div ng-show="activeStep == 1" class="wizard-step">
+								<h4>Seleccione Patrono</h4>
+								<div class="row">
+									<div class="col-xs-12 col-md-4 col-md-offset-4">
+										<form class="" action="index.html" method="post">
+											<div class="form-group">
+												<label for="" class="control-label">Patronos: </label>
+												<select class="form-control" name="" >
+													<option value="{{patrono.id}}" ng-repeat="patrono in dashboard.patronos track by patrono.id">{{patrono.name}}</option>
+												</select>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="row">
+									<div class="mt pull-right">
+										<button type="button" ripple class="mr mb-sm btn btn-default" name="button" ng-click="activeStep = activeStep + 1">
+											Continuar
+											<span class="ripple">
+												<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
+											</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div ng-show="activeStep == 2" class="">
+								<h4>Seleccione Poliza</h4>
+								<div class="row">
+									<div class="col-xs-12 col-md-4 col-md-offset-4">
+										<form class="mb-lg" action="index.html" method="post">
+											<div class="form-group">
+												<label for="" class="control-label">Poliza: </label>
+												<select class="form-control" name="" >
+													<option value="{{patrono.id}}" ng-repeat="poliza in dashboard.polizas track by poliza.id">{{poliza.pNum}}</option>
+												</select>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="row">
+									<div class="mt pull-right">
+										<button type="button" ripple class="mr mb-sm btn btn-default" name="button" ng-click="activeStep = activeStep + 1">
+											Continuar
+											<span class="ripple">
+												<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
+											</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div ng-show="activeStep == 3" class="">
+								<h4>Seleccione Fecha</h4>
+								<div class="row">
+									<div class="col-xs-12 col-md-4 col-md-offset-4">
+										<form class="mb-lg" action="index.html" method="post">
+											<div class="form-group">
+												<label for="" class="control-label">Fecha: </label>
+												<select class="form-control" name="" >
+													<option value="">2016</option>
+													<option value="">2015</option>
+													<option value="">2014</option>
+													<option value="">2013</option>
+													<option value="">2012</option>
+													<option value="">2011</option>
+												</select>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="row">
+									<div class="mt pull-right">
+										<button type="button" ripple class="mr mb-sm btn btn-default" name="button" ng-click="activeStep = activeStep + 1">
+											Continuar
+											<span class="ripple">
+												<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
+											</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div ng-show="activeStep == 4" class="">
+								<h4>Descargar Certificado de Deuda</h4>
+								<div class="row">
+									<div class="col-xs-12 col-md-4 col-md-offset-4">
+										<form class="mb-lg" action="index.html" method="post">
+											<button type="button" name="button" class="btn btn-default">Descargar Certificado</button>
+										</form>
+									</div>
+								</div>
+								<div class="row">
+									<div class="mt pull-right">
+										<button type="button" ripple class="mr mb-sm btn btn-default" name="button" ng-click="dashboard.goToWizard = false; activeStep = 1">
+											Finalizar
+											<span class="ripple">
+												<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
+											</span>
+										</button>
 									</div>
 								</div>
 							</div>

@@ -1,12 +1,12 @@
 @charset "UTF-8";
 /*!
- * 
+ *
  * Naut - Bootstrap Admin Theme + AngularJS
- * 
+ *
  * Author: @geedmo
  * Website: http://geedmo.com
  * License: https://wrapbootstrap.com/help/licenses
- * 
+ *
  */
 /**
    Component: bootstrap-reset.less
@@ -5303,6 +5303,64 @@ a.text-gray-lighter:focus {
 }
 .shadow-z5 {
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.22), 0 19px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+.steps-bar {
+	margin-bottom: 30px;
+	counter-reset: step;
+	display: table;
+	width: 100%;
+}
+
+.steps-bar > li {
+	display: table-cell;
+	list-style-type: none;
+	text-transform: uppercase;
+	font-size: 10px;
+	position: relative;
+	text-align: center;
+}
+
+.steps-bar > li.active:after, .steps-bar > li.active:before {
+	background-color: #3f51b5;
+	color: #fff;
+}
+
+.steps-bar >li:before {
+	content: counter(step);
+	position:relative;
+	counter-increment: step;
+	width: 30px;
+	line-height: 30px;
+	display: block;
+	font-size: 14px;
+	color: #333;
+	background: #fff;
+	border-radius: 3px;
+	margin: 0 auto 5px;
+	z-index: 2;
+}
+
+.steps-bar > li.active:after {
+	width: 100%;
+}
+
+.steps-bar > li:first-child:after {
+	content:none;
+}
+
+.steps-bar > li:after {
+	content: '';
+	width: 0;
+	height: 2px;
+	background: #fff;
+	position: absolute;
+	left: -50%;
+	top: 14px;
+	z-index: 1;
+	-webkit-transition: width .3s ease-out;
+	-o-transition: width .3s ease-out;
+	transition: width .3s ease-out;
 }
 
 /*# sourceMappingURL=styles.css.map */

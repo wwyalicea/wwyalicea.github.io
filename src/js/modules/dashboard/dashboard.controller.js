@@ -40,6 +40,8 @@
         employee: true
       };
 
+	  vm.goToWizard = false;
+
 	  vm.polizas = [
 		  {id: 1, pNum: '123456', isCollapsed: true, certifications: [
 			  {date: '2013'},
@@ -57,6 +59,12 @@
 			  {date: '2013'},
 			  {date: '2014'}
 		  ]}
+	  ];
+
+	  vm.patronos = [
+		{id: 1, name: 'SSS', polizas: vm.polizas},
+		{id: 2, name: 'Wovenware', polizas: vm.polizas},
+		{id: 3, name: 'Claro', polizas: vm.polizas}
 	  ];
     }
 
