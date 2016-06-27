@@ -69,6 +69,7 @@
 		  },
 		  isLoggedIn: false,
 		  displayHistory: false,
+		  home: home,
         };
 
         $rootScope.treeCtrl = {};
@@ -95,6 +96,10 @@
 				$rootScope.app.displayCreateNewCasePanels = !$rootScope.app.displayCreateNewCasePanels;
 			}
 		}];
+
+		function home(flag) {
+			flag = !flag;
+		}
       }
 
       function availableThemes() {

@@ -5,11 +5,15 @@
          <!-- START navbar header-->
          <div class="navbar-header">
             <a ui-sref="app.landing" class="navbar-brand">
-               <img src="app/img/fondo-logo.png" alt="CFSE" class="brand-logo" style="max-height: 70%;" />
+               <img src="app/img/fondo-logo.png" alt="CFSE" class="brand-logo hidden-xs" style="max-height: 70%;" />
+               <img src="app/img/fondo-logo.png" alt="CFSE" class="brand-logo hidden-sm hidden-md hidden-lg" style="max-height: 70%; max-width: 80%;" />
             </a>
             <!-- Mobile buttons-->
             <div class="mobile-toggles">
                 <!-- Button to show/hide the header menu on mobile. Visible on mobile only.-->
+				<a href="" ng-click="app.sidebar.isOffscreen = !app.sidebar.isOffscreen" class="sidebar-toggle" ng-hide="!app.isLoggedIn">
+					<em class="fa fa-navicon"></em>
+				</a>
                <a href="" ng-click="header.toggleHeaderMenu()" class="menu-toggle hidden-material">
                   <em class="fa fa-ellipsis-v fa-fw"></em>
                </a>
