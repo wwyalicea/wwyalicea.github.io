@@ -46,6 +46,12 @@
         patron: false,
         employee: false
       };
+	  vm.step = 1;
+
+	  vm.nextStep = function (step) {
+		  vm.step = step;
+		//   return vm.step;
+	  }
     }
 
 })();

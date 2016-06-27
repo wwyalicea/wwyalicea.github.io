@@ -1,17 +1,17 @@
-<div class="app-view-header">
-	Seleccione transacci&oacute;n a consultar
+<div class="app-view-header text-center">
+	Creaci&oacute;n de Nuevo Caso
 </div>
 
-<div ng-controller="PatronController as dashboard" class="container-fluid">
-   <div class="row">
-   		<div class="col-md-2">
+<div ng-controller="PatronController as dashboard" class="container-fluid" ng-init="activeStepA = 1">
+   <!-- <div class="row"> -->
+   		<!-- <div class="col-md-2">
    			<uib-tabset active="false" vertical="true" type="pills">
    				<uib-tab index="1" heading="Certificaci&oacute;n de deuda" classes="bg-cfse-light-tab" select="dashboard.setCurrentView(dashboard.views.years)"></uib-tab>
    				<uib-tab index="2" heading="Creaci&oacute;n de nuevo caso" classes="bg-cfse-light-tab" select="dashboard.setCurrentView(dashboard.views.form)"></uib-tab>
    				<uib-tab index="3" heading="Trans 3" classes="bg-cfse-light-tab"></uib-tab>
-   			</uib-tabset>
-   		</div>
-   		<div class="col-md-10" ng-show="dashboard.currentView === dashboard.views.years">
+   			</uib-tabset> -->
+   		<!-- </div> -->
+   		<!-- <div class="col-md-10" ng-show="dashboard.currentView === dashboard.views.years">
    			<div class="row">
    				<div class="col-md-6">
    					<form role="form" class="mb-lg ng-pristine ng-valid">
@@ -87,15 +87,30 @@
 			        </div>
 		        </div>
 		   	</div>
-   		</div>
-   		<div class="col-md-10" ng-show="dashboard.currentView === dashboard.views.form">
+   		</div> -->
+		<div class="row" >
+			<div class="col-xs-12 col-md-10 col-md-offset-1">
+				<div class="panel panel-default">
+					<div  class="wizard">
+						<ul class="steps-bar" style="margin-top:30px;">
+							<li ng-class="{'active':dashboard.step >= 1}" class="active">
+								<span>Patrono</span>
+							</li>
+							<li ng-class="{'active':dashboard.step >= 2}">
+								<span>Empleado</span>
+							</li>
+						</ul>
+					</div>
+			</div>
+		</div>
+   		<div class="col-xs-12 col-md-10 col-md-offset-1">
 
 		<form class="" action="index.html" method="post">
 			<uib-accordion close-others="false">
 				<uib-accordion-group is-open="dashboard.accordion.patron" panel-class="bg-cfse-light">
-					<uib-accordion-heading>
-						<span style="color: white;">
-							Informaci&oacute;n del Patrono <i class="pull-right glyphicon"
+					<uib-accordion-heading panel-class="bg-cfse">
+						<span>
+							Informaci&oacute;n del Patrono <i class="pull-right glyphicon" ng-click="dashboard.nextStep(1)"
 							ng-class="{'glyphicon-chevron-down': dashboard.accordion.patron, 'glyphicon-chevron-right': !status.dashboard.accordion.patron}"></i>
 						</span>
 					</uib-accordion-heading>
@@ -164,8 +179,8 @@
 				</uib-accordion-group>
 				<uib-accordion-group is-open="dashboard.accordion.employee" panel-class="bg-cfse-light">
 					<uib-accordion-heading>
-						<span style="color: white;">
-							Informaci&oacute;n del Empleado <i class="pull-right glyphicon"
+						<span >
+							Informaci&oacute;n del Empleado <i class="pull-right glyphicon" ng-click="dashboard.nextStep(2);"
 							ng-class="{'glyphicon-chevron-down': dashboard.accordion.employee, 'glyphicon-chevron-right': !status.dashboard.accordion.employee}"></i>
 						</span>
 					</uib-accordion-heading>
@@ -236,7 +251,7 @@
 			<div class="form-group" style="margin-top: 5px;">
 				<div class="row">
 					<div class="col-sm-12 text-right">
-						<input type="button" name="name" value="Enviar" ripple="" class="ml btn btn-oval btn-primary" style="background-color: #cd7c5e; border-color: #cd7c5e;">
+						<input type="button" name="name" value="Enviar" ripple="" class="ml btn btn-default btn-primary" style="background-color: #cd7c5e; border-color: #cd7c5e;">
 					</div>
 				</div>
 			</div>
