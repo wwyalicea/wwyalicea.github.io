@@ -70,9 +70,13 @@
 		  isLoggedIn: false,
 		  displayHistory: false,
 		  home: home,
+		  lang: 'ENGLISH'
         };
 
         $rootScope.treeCtrl = {};
+        $rootScope.changeLang = function () {
+			$rootScope.app.lang = $rootScope.app.lang == 'ENGLISH' ? 'ESPAÑOL' : 'ENGLISH';
+		};
 
         $rootScope.transactions = [
           {label: 'Certificación de Deuda'},
