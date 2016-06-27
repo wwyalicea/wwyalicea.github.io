@@ -30,14 +30,43 @@
         </div>
     </div>
     <!-- <br> -->
-	<div class="row" ng-show="app.displayHistory">
-		<div class="app-view-header text-center">
-			Historial de Certificados de Deuda Solicitados
+	<div ng-show="app.displayHistory">
+		<div class="row" >
+			<div class="app-view-header text-center">
+				Historial de Certificados de Deuda Solicitados
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="">
-			<!-- Todo  Add poliza and panels and create wizard for this transaction-->
+		<div class="row">
+			<div class="col-xs-11 col-md-offset-1">
+				<button type="button" ripple class="mr mb-sm btn btn-default" name="button">
+					Pedir Certificado Nuevo
+					<span class="ripple">
+						<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
+					</span>
+				</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-11 col-md-offset-1">
+				<div class="panel panel-default" ng-repeat="poliza in dashboard.polizas track by poliza.id">
+					<div class="panel-heading">
+						<div class="panel-title" ng-click="poliza.isCollapsed = !poliza.isCollapsed" style="cursor:pointer;">
+							<h3 class="text-muted m0">Poliza {{poliza.pNum}}</h3>
+						</div>
+					</div>
+					<div class="panel-body" uib-collapse="poliza.isCollapsed">
+						<div class="row">
+							<div class="col-xs-12 col-md-2" ng-repeat="p in poliza.certifications track by $index">
+								<div class="panel panel-default">
+									<div class="panel-body bg-cfse" ripple ng-click="dashboard.download()" style="cursor:pointer;">
+										<h1 class="text-center mt">{{p.date}}</h1><span class="fa fa-file-pdf-o"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
