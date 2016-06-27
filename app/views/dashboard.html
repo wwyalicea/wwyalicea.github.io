@@ -5,7 +5,7 @@
 
    <div class="row text-center text-muted m0" ng-hide="app.displayHistory">
     	<div class="col-xs-12 col-md-2 col-md-offset-3">
-            <div class="panel panel-default" style="cursor:pointer;">
+            <div class="panel panel-default" style="cursor:pointer;" title="Registrese como Patrono">
                 <div ripple ng-click="employerSelected = true;" class="bb br" ng-class="{'bg-primary': employerSelected, 'pv-sm': app.isLoggedIn, 'pv-xxl': !app.isLoggedIn}" >
                     <em class="fa fa-user fa-2x mv"></em>
                     <p>Patronos</p>
@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-md-2">
-            <div class="panel panel-default" style="cursor:pointer;">
+            <div class="panel panel-default" style="cursor:pointer;" title="Registrese como Proveedor">
                 <div class="bb-lg br" ng-class="{'pv-xxl': !app.isLoggedIn, 'pv-sm': app.isLoggedIn, 'bg-gray': app.isLoggedIn}">
                     <em class="fa fa-medkit fa-2x mv"></em>
                     <p>Proveedores</p>
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-md-2">
-            <div class="panel panel-default" style="cursor:pointer;">
+            <div class="panel panel-default" style="cursor:pointer;"title="Registrese como Lesionado">
                 <div class="bb-lg br" ng-class="{'pv-xxl': !app.isLoggedIn, 'pv-sm': app.isLoggedIn, 'bg-gray': app.isLoggedIn}">
                     <em class="fa fa-bed fa-2x mv"></em>
                     <p>Lesionados</p>
@@ -48,6 +48,42 @@
 		</div>
 		<br>
 		<div class="row">
+			<div class="col-xs-12 col-md-10 col-md-offset-1">
+				<div class="panel panel-default">
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover">
+							<thead class="bg-cfse">
+								<tr>
+									<th style="text-align: center; color:#fff;">
+										<a ng-click="dashboard.changeSort(dashboard.sort_patrono, 1);">Patrono <span class="fa" ng-class="{'fa-sort': dashboard.sort_patrono == 0, 'fa-sort-asc': dashboard.sort_patrono == 1, 'fa-sort-desc': dashboard.sort_patrono == -1}"></span></a>
+									</th>
+									<th style="text-align: center; color:#fff;">
+										<a ng-click="dashboard.changeSort(dashboard.sort_date, 2);">Fecha de Creaci&oacute;n <span class="fa" ng-class="{'fa-sort': dashboard.sort_date == 0, 'fa-sort-asc': dashboard.sort_date == 1, 'fa-sort-desc': dashboard.sort_date == -1}"></span></a>
+									</th>
+									<th style="text-align: center; color:#fff;">
+										<a ng-click="dashboard.changeSort(dashboard.sort_doc, 3);">Documento <span class="fa" ng-class="{'fa-sort': dashboard.sort_doc == 0, 'fa-sort-asc': dashboard.sort_doc == 1, 'fa-sort-desc': dashboard.sort_doc == -1}"></span></a>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="history in dashboard.historial | orderBy:dashboard.property track by history.doc_id ">
+									<td>
+										{{history.patrono}}
+									</td>
+									<td style="text-align: center">
+										{{history.date_created}}
+									</td>
+									<td style="text-align: center">
+										{{history.doc_id}}
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row">
 			<div class="col-xs-12 col-md-10 col-md-offset-1">
 				<div class="panel panel-default" ng-repeat="patrono in dashboard.patronos track by patrono.id">
 					<div class="panel-heading bg-cfse" style="color:#fff !important;">
@@ -81,7 +117,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<div ng-show="dashboard.goToWizard">
 		<div class="row" >
