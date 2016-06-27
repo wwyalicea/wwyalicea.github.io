@@ -96,30 +96,30 @@
 			  	vm.property = order + 'doc_id'
 		  }
 	  };
-	//   vm.polizas = [
-	// 	  {id: 1, pNum: '123456', isCollapsed: true, certifications: [
-	// 		  {date: '2013'},
-	// 		  {date: '2014'},
-	// 		  {date: '2015'},
-	// 		  {date: '2016'}
-	// 	  ]},
-	// 	  {id: 2, pNum: 'x123er', isCollapsed: true, certifications: [
-	// 		  {date: '2013'},
-	// 		  {date: '2014'},
-	// 		  {date: '2015'}
-	// 	  ]},
-	// 	  {id: 3, pNum: '987654', isCollapsed: true, certifications: [
-	// 		  {date: '2012'},
-	// 		  {date: '2013'},
-	// 		  {date: '2014'}
-	// 	  ]}
-	//   ];
-	  //
-	//   vm.patronos = [
-	// 	{id: 1, name: 'SSS', isCollapsed: true, polizas: vm.polizas},
-	// 	{id: 2, name: 'Wovenware', isCollapsed: true, polizas: vm.polizas},
-	// 	{id: 3, name: 'Claro', isCollapsed: true, polizas: vm.polizas}
-	//   ];
+	  vm.polizas = [
+		  {id: 1, pNum: '123456', isCollapsed: true, certifications: [
+			  {date: '2013'},
+			  {date: '2014'},
+			  {date: '2015'},
+			  {date: '2016'}
+		  ]},
+		  {id: 2, pNum: 'x123er', isCollapsed: true, certifications: [
+			  {date: '2013'},
+			  {date: '2014'},
+			  {date: '2015'}
+		  ]},
+		  {id: 3, pNum: '987654', isCollapsed: true, certifications: [
+			  {date: '2012'},
+			  {date: '2013'},
+			  {date: '2014'}
+		  ]}
+	  ];
+
+	  vm.patronos = [
+		{id: 1, name: 'SSS', isCollapsed: true, polizas: vm.polizas},
+		{id: 2, name: 'Wovenware', isCollapsed: true, polizas: vm.polizas},
+		{id: 3, name: 'Claro', isCollapsed: true, polizas: vm.polizas}
+	  ];
     }
 
 })();
