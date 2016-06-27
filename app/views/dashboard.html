@@ -49,18 +49,31 @@
 		<br>
 		<div class="row">
 			<div class="col-xs-12 col-md-10 col-md-offset-1">
-				<div class="panel panel-default" ng-repeat="poliza in dashboard.polizas track by poliza.id">
-					<div class="panel-heading">
-						<div class="panel-title" ng-click="poliza.isCollapsed = !poliza.isCollapsed" style="cursor:pointer;">
-							<h4 class="text-muted m0">Poliza {{poliza.pNum}}</h4>
+				<div class="panel panel-default" ng-repeat="patrono in dashboard.patronos track by patrono.id">
+					<div class="panel-heading bg-cfse" style="color:#fff !important;">
+						<div class="panel-title" ng-click="patrono.isCollapsed = !patrono.isCollapsed" style="cursor:pointer;">
+							<h4 class="m0">{{patrono.name}}</h4>
 						</div>
 					</div>
-					<div class="panel-body" uib-collapse="poliza.isCollapsed">
+					<div class="panel-body" uib-collapse="patrono.isCollapsed">
 						<div class="row">
-							<div class="col-xs-12 col-md-2" ng-repeat="p in poliza.certifications track by $index">
+							<div class="col-xs-12 col-md-10 col-md-offset-1" ng-repeat="poliza in patrono.polizas track by poliza.id">
 								<div class="panel panel-default">
-									<div class="panel-body bg-cfse" ripple ng-click="dashboard.download()" style="cursor:pointer;">
-										<h1 class="text-center mt">{{p.date}}</h1><span class="fa fa-file-pdf-o"></span>
+									<div class="panel-heading bg-cfse" style="color:#fff !important;">
+										<div class="panel-title" ng-click="poliza.isCollapsed = !poliza.isCollapsed" style="cursor:pointer;">
+											<h4 class="m0">Poliza: {{poliza.pNum}}</h4>
+										</div>
+									</div>
+									<div class="panel-body" uib-collapse="poliza.isCollapsed">
+										<div class="row">
+											<div class="col-xs-12 col-md-2" ng-repeat="p in poliza.certifications track by $index">
+												<div class="panel panel-default">
+													<div class="panel-body bg-cfse" ripple ng-click="dashboard.download()" style="cursor:pointer;">
+													<h1 class="text-center mt">{{p.date}}</h1><span class="fa fa-file-pdf-o"></span>
+												</div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>

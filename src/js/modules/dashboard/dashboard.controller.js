@@ -62,9 +62,9 @@
 	  ];
 
 	  vm.patronos = [
-		{id: 1, name: 'SSS', polizas: vm.polizas},
-		{id: 2, name: 'Wovenware', polizas: vm.polizas},
-		{id: 3, name: 'Claro', polizas: vm.polizas}
+		{id: 1, name: 'SSS', isCollapsed: true, polizas: vm.polizas},
+		{id: 2, name: 'Wovenware', isCollapsed: true, polizas: vm.polizas},
+		{id: 3, name: 'Claro', isCollapsed: true, polizas: vm.polizas}
 	  ];
     }
 
