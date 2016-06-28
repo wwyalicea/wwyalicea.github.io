@@ -5306,61 +5306,62 @@ a.text-gray-lighter:focus {
 }
 
 .steps-bar {
-	margin-bottom: 30px;
-	counter-reset: step;
-	display: table;
-	width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+  counter-reset: step;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
 }
-
 .steps-bar > li {
-	display: table-cell;
-	list-style-type: none;
-	text-transform: uppercase;
-	font-size: 10px;
-	position: relative;
-	text-align: center;
+  display: table-cell;
+  list-style-type: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  position: relative;
+  text-align: center;
+  /* paint the steps progress */
 }
-
-.steps-bar > li.active:after, .steps-bar > li.active:before {
-	background-color: #cd7c5e;
-	color: #fff;
+.steps-bar > li > span {
+  cursor: pointer;
 }
-
-.steps-bar >li:before {
-	content: counter(step);
-	position:relative;
-	counter-increment: step;
-	width: 30px;
-	line-height: 30px;
-	display: block;
-	font-size: 14px;
-	color: #333;
-	background: #fff;
-	border-radius: 3px;
-	margin: 0 auto 5px;
-	z-index: 2;
+.steps-bar > li:before {
+  content: counter(step);
+  position: relative;
+  counter-increment: step;
+  width: 30px;
+  line-height: 30px;
+  display: block;
+  font-size: 14px;
+  color: #333;
+  background: white;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+  z-index: 2;
 }
-
-.steps-bar > li.active:after {
-	width: 100%;
-}
-
-.steps-bar > li:first-child:after {
-	content:none;
-}
-
 .steps-bar > li:after {
-	content: '';
-	width: 0;
-	height: 2px;
-	background: #fff;
-	position: absolute;
-	left: -50%;
-	top: 14px;
-	z-index: 1;
-	-webkit-transition: width .3s ease-out;
-	-o-transition: width .3s ease-out;
-	transition: width .3s ease-out;
+  content: '';
+  width: 0;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: -50%;
+  top: 14px;
+  z-index: 1;
+  /*put it behind the numbers*/
+  -webkit-transition: width 0.3s ease-out;
+  -o-transition: width 0.3s ease-out;
+  transition: width 0.3s ease-out;
 }
-
+.steps-bar > li:first-child:after {
+  content: none;
+}
+.steps-bar > li.active:before,
+.steps-bar > li.active:after {
+  background: #cd7c5e;
+  color: white;
+}
+.steps-bar > li.active:after {
+  width: 100%;
+}
 /*# sourceMappingURL=styles.css.map */
