@@ -6,7 +6,7 @@
    <div class="row text-center text-muted m0" ng-hide="app.displayHistory">
     	<div class="col-xs-12 col-md-2 col-md-offset-3">
             <div class="panel panel-default" style="cursor:pointer;" title="Registrese como Patrono">
-                <div ripple ng-click="employerSelected = true;" class="bb br" ng-class="{'bg-primary': employerSelected, 'pv-sm': app.isLoggedIn, 'pv-xxl': !app.isLoggedIn}" >
+                <div ripple ng-click="employerSelected = true;" class="bb br" ng-class="{'bg-cfse': employerSelected, 'pv-sm': app.isLoggedIn, 'pv-xxl': !app.isLoggedIn}" >
                     <em class="fa fa-user fa-2x mv"></em>
                     <p>Patronos</p>
                 </div>
@@ -29,6 +29,18 @@
             </div>
         </div>
     </div>
+	<div class="row">
+		<div class="col-xs-12 col-md-10 col-md-offset-1" ng-hide="app.displayHistory || !app.isLoggedIn">
+			<div class="jumbotron">
+				<h3>Registrese Como Proveedor<span><em class="fa fa-medkit pull-left"></em></span></h3>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+			<div class="jumbotron">
+				<h3>Registrese Como Lesionado<span><em class="fa fa-bed pull-left"></em></span></h3>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+	</div>
     <!-- <br> -->
 	<div ng-show="app.displayHistory && !dashboard.goToWizard">
 		<div class="row" >
@@ -61,7 +73,7 @@
 										<a ng-click="dashboard.changeSort(dashboard.sort_date, 2);">Fecha de Creaci&oacute;n <span class="fa" ng-class="{'fa-sort': dashboard.sort_date == 0, 'fa-sort-asc': dashboard.sort_date == 1, 'fa-sort-desc': dashboard.sort_date == -1}"></span></a>
 									</th>
 									<th style="text-align: center; color:#fff;">
-										<a ng-click="dashboard.changeSort(dashboard.sort_doc, 3);">Documento <span class="fa" ng-class="{'fa-sort': dashboard.sort_doc == 0, 'fa-sort-asc': dashboard.sort_doc == 1, 'fa-sort-desc': dashboard.sort_doc == -1}"></span></a>
+										<a ng-click="dashboard.changeSort(dashboard.sort_doc, 3);">Poliza <span class="fa" ng-class="{'fa-sort': dashboard.sort_doc == 0, 'fa-sort-asc': dashboard.sort_doc == 1, 'fa-sort-desc': dashboard.sort_doc == -1}"></span></a>
 									</th>
 								</tr>
 							</thead>
@@ -74,7 +86,10 @@
 										{{history.date_created}}
 									</td>
 									<td style="text-align: center">
-										{{history.doc_id}}
+										<a href="" ng-click="dashboard.download();">
+											<em class="fa fa-file-pdf-o"></em>
+											{{history.poliza.pNum}}
+										</a>
 									</td>
 								</tr>
 							</tbody>
@@ -133,10 +148,10 @@
 									<span>Patrono</span>
 								</li>
 								<li ng-class="{'active':activeStep >= 2}">
-									<span>Poliza</span>
+									<span>Poliza A&ntilde;o</span>
 								</li>
 								<li ng-class="{'active':activeStep >= 3}">
-									<span>A&ntilde;o</span>
+									<span>Prop&oacute;sito</span>
 								</li>
 								<li ng-class="{'active':activeStep >= 4}">
 									<span>Certificado</span>
@@ -171,33 +186,25 @@
 								<h4>Seleccione Poliza</h4>
 								<div class="row">
 									<div class="col-xs-12 col-md-4 col-md-offset-4">
-										<form class="mb-lg" action="index.html" method="post">
+										<form class="mb-lg form-inline" action="index.html" method="post">
 											<div class="form-group">
 												<label for="" class="control-label">Poliza: </label>
 												<select class="form-control" name="" >
 													<option value="{{patrono.id}}" ng-repeat="poliza in dashboard.polizas track by poliza.id">{{poliza.pNum}}</option>
 												</select>
 											</div>
-										</form>
-									</div>
-								</div>
-								<div class="row">
-									<div class="mt pull-right">
-										<button type="button" ripple class="mr mb-sm btn btn-default" name="button" ng-click="activeStep = activeStep + 1">
-											Continuar
-											<span class="ripple">
-												<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
-											</span>
-										</button>
-									</div>
-								</div>
-							</div>
-							<div ng-show="activeStep == 3" class="">
-								<h4>Seleccione A&ntilde;o</h4>
-								<div class="row">
-									<div class="col-xs-12 col-md-4 col-md-offset-4">
-										<form class="mb-lg" action="index.html" method="post">
-											<div class="form-group">
+											<div class="form-group visible-xs">
+												<label for="" class="control-label">A&ntilde;o: </label>
+												<select class="form-control" name="" >
+													<option value="">2016</option>
+													<option value="">2015</option>
+													<option value="">2014</option>
+													<option value="">2013</option>
+													<option value="">2012</option>
+													<option value="">2011</option>
+												</select>
+											</div>
+											<div class="ml form-group hidden-xs">
 												<label for="" class="control-label">A&ntilde;o: </label>
 												<select class="form-control" name="" >
 													<option value="">2016</option>
@@ -220,6 +227,101 @@
 											</span>
 										</button>
 									</div>
+									<div class="mt pull-left">
+										<button type="button" ripple class="ml mb-sm btn btn-default" name="button" ng-click="activeStep = activeStep - 1">
+											Anterior
+											<span class="ripple">
+												<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
+											</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div ng-show="activeStep == 3" class="">
+								<h4>Informaci&oacute;n y Prop&oacute;sito</h4>
+								<div class="row">
+									<div class="col-xs-12 col-md-6 col-md-offset-3">
+										<form class="mb-lg" action="index.html" method="post">
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-6">
+														<label for="" class="control-label">Nombre del Patrono</label>
+														<input type="text" name="name" class="form-control">
+													</div>
+													<div class="col-md-6">
+														<label for="" class="control-label">Direcci&oacute;n Postal</label>
+														<input type="text" name="name" class="form-control">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-6">
+														<label for="" class="control-label">Correo Electr&oacute;nico</label>
+														<input type="text" name="name" value="" class="form-control">
+													</div>
+													<div class="col-md-6">
+														<label for="" class="control-label">Nombre de la Compa&ntilde;&iacute;a</label>
+														<input type="text" name="name" value="" class="form-control">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-6">
+														<label for="" class="control-label">Seguro Social Patronal</label>
+														<input type="text" name="name" value="" class="form-control">
+													</div>
+													<div class="col-md-6">
+														<label for="" class="control-label">N&uacute;mero de Poliza de Seguro</label>
+														<input type="text" name="name" value="" class="form-control">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-6">
+														<label for="" class="control-label">Tipo de Empleador</label>
+														<input type="text" name="name" value="" class="form-control">
+													</div>
+													<div class="col-md-6">
+														<label for="" class="control-label">Direcci&oacute;n F&iacute;sica</label>
+														<input type="text" name="name" value="" class="form-control">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="row">
+													<div class="col-md-6">
+														<label for="" class="control-label">N&uacute;mero de Contacto</label>
+														<input type="text" name="name" value="" class="form-control">
+													</div>
+													<div class="col-md-6">
+														<label for="" class="control-label">Tipo de Negocio</label>
+														<input type="text" name="name" value="" class="form-control">
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="row">
+									<div class="mt pull-right">
+										<button type="button" ripple class="mr mb-sm btn btn-default" name="button" ng-click="activeStep = activeStep + 1">
+											Continuar
+											<span class="ripple">
+												<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
+											</span>
+										</button>
+									</div>
+									<div class="mt pull-left">
+										<button type="button" ripple class="ml mb-sm btn btn-default" name="button" ng-click="activeStep = activeStep - 1">
+											Anterior
+											<span class="ripple">
+												<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
+											</span>
+										</button>
+									</div>
 								</div>
 							</div>
 							<div ng-show="activeStep == 4" class="">
@@ -236,6 +338,14 @@
 									<div class="mt pull-right">
 										<button type="button" ripple class="mr mb-sm btn btn-default" name="button" ng-click="dashboard.goToWizard = false; activeStep = 1;">
 											Finalizar
+											<span class="ripple">
+												<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
+											</span>
+										</button>
+									</div>
+									<div class="mt pull-left">
+										<button type="button" ripple class="ml mb-sm btn btn-default" name="button" ng-click="activeStep = activeStep - 1">
+											Anterior
 											<span class="ripple">
 												<span class="angular-ripple" style="width:89px; height:89px; left: -0.328125px; top: -35.5px;"></span>
 											</span>

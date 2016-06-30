@@ -40,14 +40,37 @@
         employee: true
       };
 
-	  vm.goToWizard = false;
+	  vm.polizas = [
+		 {id: 1, pNum: '123456', isCollapsed: true, certifications: [
+			 {date: '2013'},
+			 {date: '2014'},
+			 {date: '2015'},
+			 {date: '2016'}
+		 ]},
+		 {id: 2, pNum: 'x123er', isCollapsed: true, certifications: [
+			 {date: '2013'},
+			 {date: '2014'},
+			 {date: '2015'}
+		 ]},
+		 {id: 3, pNum: '987654', isCollapsed: true, certifications: [
+			 {date: '2012'},
+			 {date: '2013'},
+			 {date: '2014'}
+		 ]}
+	 ];
 
+	 vm.patronos = [
+	   {id: 1, name: 'SSS', isCollapsed: true, polizas: vm.polizas},
+	   {id: 2, name: 'Wovenware', isCollapsed: true, polizas: vm.polizas},
+	   {id: 3, name: 'Claro', isCollapsed: true, polizas: vm.polizas}
+	 ];
+
+	  vm.goToWizard = false;
+	  console.log(vm.polizas);
 	  vm.historial = [
-		{doc_id: '2016082E', patrono: 'SSS', date_created: '2016' },
-		{doc_id: '2015032E', patrono: 'SSS', date_created: '2015'},
-		{doc_id: '2016022E', patrono: 'Wovenware', date_created: '2016'},
-		{doc_id: '2014082E', patrono: 'MMM', date_created: '2014'},
-		{doc_id: '2013082E', patrono: 'Claro', date_created: '2013'},
+		{doc_id: '2016082E', patrono: 'SSS', date_created: '2016', poliza: vm.polizas[0]},
+		{doc_id: '2016022E', patrono: 'Wovenware', date_created: '2016', poliza: vm.polizas[2]},
+		{doc_id: '2015032E', patrono: 'SSS', date_created: '2015', poliza: vm.polizas[1]},
 	  ];
 
 	  vm.sort_patrono = 0;
@@ -93,33 +116,10 @@
 			  	vm.property = order + 'date_created';
 				break;
 			  case 3:
-			  	vm.property = order + 'doc_id'
+			  	vm.property = order + 'poliza.pNum'
 		  }
 	  };
-	  vm.polizas = [
-		  {id: 1, pNum: '123456', isCollapsed: true, certifications: [
-			  {date: '2013'},
-			  {date: '2014'},
-			  {date: '2015'},
-			  {date: '2016'}
-		  ]},
-		  {id: 2, pNum: 'x123er', isCollapsed: true, certifications: [
-			  {date: '2013'},
-			  {date: '2014'},
-			  {date: '2015'}
-		  ]},
-		  {id: 3, pNum: '987654', isCollapsed: true, certifications: [
-			  {date: '2012'},
-			  {date: '2013'},
-			  {date: '2014'}
-		  ]}
-	  ];
 
-	  vm.patronos = [
-		{id: 1, name: 'SSS', isCollapsed: true, polizas: vm.polizas},
-		{id: 2, name: 'Wovenware', isCollapsed: true, polizas: vm.polizas},
-		{id: 3, name: 'Claro', isCollapsed: true, polizas: vm.polizas}
-	  ];
     }
 
 })();

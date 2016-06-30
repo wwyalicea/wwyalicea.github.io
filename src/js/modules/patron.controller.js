@@ -43,13 +43,21 @@
       }
 
       vm.accordion = {
-        patron: false,
+        patron: true,
         employee: false
       };
 	  vm.step = 1;
 
 	  vm.nextStep = function (step) {
 		  vm.step = step;
+		  if (step == 1) {
+			  vm.accordion.patron = true;
+			  vm.accordion.employer = false;
+		  }
+		  else if (step == 2) {
+			  vm.accordion.patron = false;
+			  vm.accordion.employer = true;
+		  }
 		//   return vm.step;
 	  }
     }
